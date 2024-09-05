@@ -1,0 +1,32 @@
+# Configuration for NoDupePlugin
+
+# Discord webhook URL for sending alerts
+discord_webhook_url: "https://your.discord.webhook.here"
+
+# Thresholds for player actions (number of actions within a 5-second window)
+thresholds:
+  block_place: 10    # Max block placements in a 5-second window
+  item_drop: 5       # Max item drops in a 5-second window
+
+# Redstone cooldown in milliseconds
+redstone_cooldown: 1000
+
+# Whitelisted players (UUIDs of players who are trusted and bypass anti-dupe checks)
+whitelisted_players:
+  - "player-uuid-1"
+  - "player-uuid-2"
+  - "player-uuid-3"
+
+# Sensitive materials (materials that are often used in duping exploits)
+sensitive_materials:
+  - TNT
+  - RAIL
+  - PISTON
+  - HOPPER
+  - ENDER_CHEST
+  - SHULKER_BOX
+  - ITEM_FRAME
+  - MINECART
+  - END_PORTAL_FRAME
+  - BOOK
+  - DRAGON_EGG

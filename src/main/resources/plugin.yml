@@ -1,0 +1,15 @@
+name: nodupeplugin
+version: '1.0'
+main: jefry.plugin.nodupeplugin.Nodupeplugin
+api-version: '1.21'
+commands:
+  nodupe:
+    description: Reload the NoDupePlugin configuration.
+    usage: /<command> reload
+    permission: nodupe.admin
+    permission-message: You do not have permission to run this command.
+
+permissions:
+  nodupe.admin:
+    description: Allows the player to reload the NoDupePlugin configuration.
+    default: op
