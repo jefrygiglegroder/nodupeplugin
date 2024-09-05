@@ -1,10 +1,10 @@
 name: nodupeplugin
-version: '1.0'
+version: '1.1'
 main: jefry.plugin.nodupeplugin.Nodupeplugin
 api-version: '1.21'
 commands:
   nodupe:
-    description: Reload the NoDupePlugin configuration.
+    description: Main command for NoDupePlugin.
     usage: /<command> reload
     permission: nodupe.admin
     permission-message: You do not have permission to run this command.

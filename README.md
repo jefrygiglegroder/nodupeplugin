@@ -1,1 +1,2 @@
 version 1 will be updated when newer dupes and changes are found it uses paper 1.21
+update 2: alot has changed from one file it is now 7 and hopefully it protects from bedrock cheats at the moment it only protects from fly hacks but hopefully i will be able to make it protect from all bedrock and java cheats.

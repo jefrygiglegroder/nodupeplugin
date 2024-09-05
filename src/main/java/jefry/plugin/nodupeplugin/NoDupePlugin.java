@@ -17,10 +17,14 @@ public class NoDupePlugin extends JavaPlugin {
         discordNotifier = new DiscordNotifier(getConfig());
         activityTracker = new PlayerActivityTracker(this);
 
-        // Register events
+        // Register event listeners
         getServer().getPluginManager().registerEvents(new DupeEventListener(this, activityTracker, discordNotifier), this);
+        getServer().getPluginManager().registerEvents(new BedrockCheatProtector(this, discordNotifier), this);
 
-        getLogger().info("NoDupePlugin has been enabled and is actively monitoring for dupes.");
+        // Register command executor
+        getCommand("nodupe").setExecutor(new NoDupeCommand(this));
+
+        getLogger().info("NoDupePlugin has been enabled and is actively monitoring for dupes and cheats.");
     }
 
     @Override
@@ -28,7 +32,7 @@ public class NoDupePlugin extends JavaPlugin {
         getLogger().info("NoDupePlugin has been disabled.");
     }
 
-    private void loadConfiguration() {
+    public void loadConfiguration() {
         reloadConfig();
     }
 }

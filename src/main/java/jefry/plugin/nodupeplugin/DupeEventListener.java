@@ -25,28 +25,21 @@ public class DupeEventListener implements Listener {
         if (activityTracker.isPlayerQuitting(player.getUniqueId())) {
             event.setCancelled(true);
             plugin.getLogger().warning("Cancelled item drop as player was logging out: " + player.getName());
-
-            // Updated: Call sendAlert with player object and action type
             discordNotifier.sendAlert(player, "item-drop");
         } else {
             activityTracker.trackActivity(player, "item-drop");
         }
     }
 
-
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         activityTracker.setPlayerQuitting(player.getUniqueId(), true);
 
-        // Save player data to prevent dupes on logout
         player.saveData();
         plugin.getLogger().info("Player data saved on logout for " + player.getName());
-
-        // Updated: Call sendAlert with player object and action type
         discordNotifier.sendAlert(player, "logout");
 
-        // Remove quitting state after a short delay (to avoid false positives on reconnect)
-        plugin.getServer().getScheduler().runTaskLater(plugin, () -> activityTracker.setPlayerQuitting(player.getUniqueId(), false), 20L); // 1-second delay
+        plugin.getServer().getScheduler().runTaskLater(plugin, () -> activityTracker.setPlayerQuitting(player.getUniqueId(), false), 20L);
     }
 }

@@ -29,14 +29,13 @@ public class PlayerActivityTracker {
         }
     }
 
-    // Inner class for player activity tracking
     private static class PlayerActivity {
         private final List<Long> actionTimestamps = new ArrayList<>();
 
         public void recordAction(String action) {
             long currentTime = System.currentTimeMillis();
             actionTimestamps.add(currentTime);
-            actionTimestamps.removeIf(timestamp -> currentTime - timestamp > 5000); // Remove old entries
+            actionTimestamps.removeIf(timestamp -> currentTime - timestamp > 5000);
         }
     }
 }
