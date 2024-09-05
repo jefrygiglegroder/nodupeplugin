@@ -30,3 +30,18 @@ sensitive_materials:
   - END_PORTAL_FRAME
   - BOOK
   - DRAGON_EGG
+
+# Default alert settings
+alert-settings:
+  title: "Dupe Alert - {player}"
+  description: "{player} attempted to use dupe: **{dupeType}**."
+  color: 16711680  # Red color
+
+# Dupe Type Presets
+dupe-types:
+  drop-on-quit: "Item Drop on Quit"
+  speed-exploit: "Speed Exploit"
+  item-duplication: "Item Duplication"
+
+# Embed Footer
+footer-text: "Server: {server}"
